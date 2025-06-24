@@ -1,4 +1,4 @@
-import Shape
+from Shape import Shape
 import math
 
 class Triangle(Shape):
