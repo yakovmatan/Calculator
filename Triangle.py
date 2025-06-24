@@ -18,3 +18,6 @@ class Triangle(Shape):
         perimeter = self.base + 2 * side
         return perimeter
 
+    def __repr__(self):
+        return f"{self.__class__.__name__}(base={self.base}, height={self.height})"
+
