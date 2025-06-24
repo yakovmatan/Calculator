@@ -13,3 +13,6 @@ class Hexagon(Shape):
 
     def get_perimeter(self):
         return self.side * 6
+
+    def __repr__(self):
+        return f"{self.__class__.__name__}(side={self.side})"
