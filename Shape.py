@@ -11,4 +11,4 @@ class Shape(ABC):
         pass
 
     def __str__(self):
-        return f"{self.__class__.__name__} area: {self.get_area()} perimeter: {self.get_perimeter()}"
+        return f"{self.__class__.__name__} - area: {self.get_area()} perimeter: {self.get_perimeter()}"
