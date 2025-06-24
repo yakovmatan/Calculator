@@ -1,4 +1,5 @@
 import Shape
+import math
 
 class Triangle(Shape):
 
@@ -10,3 +11,10 @@ class Triangle(Shape):
 
     def get_area(self):
         return (self.base * self.height) / 2
+
+    def get_perimeter(self):
+        half_base = self.base / 2
+        side = math.sqrt(half_base ** 2 + self.height ** 2)
+        perimeter = self.base + 2 * side
+        return perimeter
+
