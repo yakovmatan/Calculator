@@ -40,3 +40,8 @@ class Shape(ABC):
 
     def __rmul__(self, other):
         return self.__mul__(other)
+
+    def __add__(self, other):
+        if not isinstance(other, Shape):
+            return NotImplemented
+        return self.get_area() + other.get_area()
