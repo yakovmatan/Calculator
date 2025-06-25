@@ -3,21 +3,26 @@ import math
 
 class Triangle(Shape):
 
-    def __init__(self,base,height):
-        if base <= 0 or height <= 0:
-            raise ValueError("base and height must be positive numbers")
-        self.base = base
-        self.height = height
+    def __init__(self,a,b,c):
+        if a <= 0 or b <= 0 or c <= 0:
+            raise ValueError("Sides must be positive numbers")
+        if not self.is_valid_triangle(a,b,c):
+            raise ArithmeticError("The sides do not form a valid triangle")
+        self.a = a
+        self.b = b
+        self.c = c
+
+    @staticmethod
+    def is_valid_triangle(a,b,c):
+        return a + b > c and a + c > b and b + c > a
 
     def get_area(self):
-        return (self.base * self.height) / 2
+        semi_p = self.get_perimeter() / 2
+        return math.sqrt(semi_p * (semi_p - self.a) * (semi_p - self.b) * (semi_p - self.c))
 
     def get_perimeter(self):
-        half_base = self.base / 2
-        side = math.sqrt(half_base ** 2 + self.height ** 2)
-        perimeter = self.base + 2 * side
-        return perimeter
+        return self.a + self.b + self.c
 
     def __repr__(self):
-        return f"{self.__class__.__name__}(base={self.base}, height={self.height})"
+        return f"{self.__class__.__name__}(a={self.a}, b={self.b}, c={self.c})"
 
