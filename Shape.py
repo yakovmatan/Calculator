@@ -1,6 +1,5 @@
 from abc import ABC,abstractmethod
 from functools import total_ordering
-from os import replace
 
 
 @total_ordering
